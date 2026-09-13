@@ -65,6 +65,14 @@ uvicorn server:app --reload --port 8000
 ```
 Then open `weathergpt.html` in a browser. It talks to the FastAPI server at `localhost:8000` for both text and voice queries, and includes a "Sample bulletin" style live demo as well as a real chat with microphone recording.
 
+### Optional
+In order to host the html file for the server on the WAN you can run the following command:
+```bash
+hostname -I # linux
+python -m http.server 9000 --bind 0.0.0.0
+```
+The files will then be available at: <LOCAL-IP>:9000/weathergpt.html
+
 ## Tech stack
 
 | Layer | Technology |
